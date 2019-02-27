@@ -10,4 +10,5 @@ python:
 install:
   - pip install tox-travis
 script:
+  - pip install https://github.com/devpi/devpi/archive/master.zip
   - tox

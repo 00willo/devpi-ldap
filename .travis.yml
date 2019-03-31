@@ -1,13 +1,22 @@
 language: python
 dist: xenial
-sudo: true
-python:
-  - 2.7
-  - 3.4
-  - 3.5
-  - 3.6
-  - 3.7
-  - 3.8-dev
+matrix:
+  include:
+    - python: 2.7
+      env: TOXENV=py27, py27-ldap0, py27-ldap1
+    - python: 3.4
+      env: TOXENV=py34, py34-ldap0, py34-ldap1
+    - python: 3.5
+      env: TOXENV=py35, py35-ldap0, py35-ldap1
+    - python: 3.6
+      env: TOXENV=py36, py36-ldap0, py36-ldap1
+    - python: 3.7
+      env: TOXENV=py37, py37-ldap0, py37-ldap1
+    - python: 3.8-dev
+      env: TOXENV=py38, py38-ldap0, py38-ldap1
+  allow_failures:
+    - env: TOXENV=py38, py38-ldap0, py38-ldap1
+
 install:
   - pip install tox-travis
 script:

@@ -12,7 +12,7 @@ matrix:
       env: TOXENV=py36,py36-ldap0,py36-ldap1
     - python: 3.7
       env: TOXENV=py37,py37-ldap0,py37-ldap1
-    - python: 3.8-de
+    - python: 3.8-dev
       env: TOXENV=py38,py38-ldap0,py38-ldap1
   allow_failures:
     - env: TOXENV=py38,py38-ldap0,py38-ldap1
